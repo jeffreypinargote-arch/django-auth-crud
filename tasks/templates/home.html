@@ -3,13 +3,15 @@
 
 {% block content %}
 <h1 class="display-1 text-center text-dark">Django App</h1>
-
+{% if user.is_authenticated %}
 <h2 class="text-center text-secondary">
     ¡Bienvenido, {{ user.username }}!
 </h2>
+
+{% endif %}
+
 <main class="container py-5">
     <section class="card card-body">
-    <h1 class="display-1 text-center">Django App</h1>
         <p>
             Este es un proyecto elaborado en django desplegado en render, correspondiente a la materia
             de MOO, de software, tercer semestre -taller 81
