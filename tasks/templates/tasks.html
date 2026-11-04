@@ -6,6 +6,9 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h1 class="text-center display-3 py-5">{{tipopagina}} </h1>
+            <h4 class="text-center text-secondary">
+                Usuario: {{ user.username }}
+            </h4>
             <ul class="list-group">
                 {% for task in tasks %}
                 <a class="list-group-item" href="{% url 'task_detail' task.id %}"> 
@@ -22,7 +25,7 @@
                         <p>{{task.description}}</p>
 
 
-                        <p>{{task.datecomplete |date:'M j Y:i' }} </p>
+                        <p>{{task.datecomplete|date:'d \d\e F \d\e Y, H:i'}} </p>
                     
                 </a>
                 {% endfor %}
