@@ -21,14 +21,16 @@
             Roca Jeffrey <br>
             Miranda Santana
         </p>
-        <div class="text-center">
-            <a class="btn btn-secondary" href="/signin/">
-                signin
-            </a>
-            <a class="btn btn-dark" href="/signup/">
-                signup
-            </a>
-        </div>
+        {% if not user.is_authenticated %}
+            <div class="text-center">
+                <a class="btn btn-secondary" href="/signin/">
+                    signin
+                </a>
+                <a class="btn btn-dark" href="/signup/">
+                    signup
+                </a>
+            </div>
+        {% else %}
     </section>
 </main>
 
