@@ -1,38 +1,43 @@
-{%  extends 'base.html' %}
-
+{% extends 'base.html' %}
 
 {% block content %}
-<h1 class="display-1 text-center text-dark">Django App</h1>
-{% if user.is_authenticated %}
-<h2 class="text-center text-secondary">
-    ¡Bienvenido, {{ user.username }}!
-</h2>
 
+<h1 class="display-1 text-center text-dark">Django App</h1>
+
+{% if user.is_authenticated %}
+    <h2 class="text-center text-secondary">
+        ¡Bienvenido, {{ user.username }}!
+    </h2>
 {% endif %}
 
 <main class="container py-5">
     <section class="card card-body">
         <p>
-            Este es un proyecto elaborado en django desplegado en render, correspondiente a la materia
-            de MOO, de software, tercer semestre -taller 81
+            Este es un proyecto elaborado en Django desplegado en Render,
+            correspondiente a la materia de MOO, de software,
+            tercer semestre - taller 81.
         </p>
+
         <h5 class="text-dark">Autores:</h5>
+
         <p class="text-secondary">
             Roca Jeffrey <br>
             Miranda Santana
         </p>
+
         {% if not user.is_authenticated %}
             <div class="text-center">
                 <a class="btn btn-secondary" href="/signin/">
-                    signin
+                    iniciar sesión
                 </a>
+
                 <a class="btn btn-dark" href="/signup/">
-                    signup
+                    registrarse
                 </a>
             </div>
-        {% else %}
+        {% endif %}
+
     </section>
 </main>
 
-    
 {% endblock %}
